@@ -10,4 +10,6 @@
 
 3、格式化输出
 
-图片
+![](/resources/1.PNG)
+
+![](/resources/2.PNG)
