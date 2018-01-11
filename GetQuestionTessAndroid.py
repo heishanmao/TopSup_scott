@@ -11,36 +11,30 @@ import time
 import threading
 
 if __name__ == '__main__':
-    while True:
-        # 计时器
-        start = time.clock()
+    # 计时器
+    start = time.clock()
 
-        # 截图
-        screenshot.check_screenshot()
-        img = Image.open("./screenshot.png")
+    # 截图
+    screenshot.check_screenshot()
+    img = Image.open("./screenshot.png")
 
-        # 文字识别
-        question, choices = ocr.ocr_img(img)
+    # 文字识别
+    question, choices = ocr.ocr_img(img)
 
-        # 启用多线程
-        threads = []
-        t1 = threading.Thread(target=methods.run_algorithm, args=(1, question, choices,))
-        threads.append(t1)
-        t2 = threading.Thread(target=methods.run_algorithm, args=(2, question, choices,))
-        threads.append(t2)
-        t3 = threading.Thread(target=methods.run_algorithm, args=(0, question, choices,))
-        threads.append(t3)
-        for t in threads:
-            t.setDaemon(False)
-            t.start()
+    # 启用多线程
+    threads = []
+    t1 = threading.Thread(target=methods.run_algorithm, args=(1, question, choices,))
+    threads.append(t1)
+    t2 = threading.Thread(target=methods.run_algorithm, args=(2, question, choices,))
+    threads.append(t2)
+    t3 = threading.Thread(target=methods.run_algorithm, args=(0, question, choices,))
+    threads.append(t3)
+    for t in threads:
+        t.setDaemon(False)
+        t.start()
 
-        # 结束
-        end = time.clock()
-        print("耗时: {0:>5.3}s".format(end - start))
-
-        # 重复运行
-        go = input('输入回车继续运行,输入 n 回车结束运行: ')
-        if go == 'n':
-            break
+    # 结束
+    end = time.clock()
+    print("耗时: {0:>5.3}s".format(end - start))
 
 
