@@ -6,9 +6,11 @@
 
 import requests
 import webbrowser
+import urllib.parse
 
 def open_webbrowser(question):
-    webbrowser.open('https://baidu.com/s?wd=' + question)
+    webbrowser.open('https://baidu.com/s?wd=' + urllib.parse.quote(question))
+    #webbrowser.open('https://baidu.com/s?wd=' + question)
 
 def open_webbrowser_count(question,choices):
     #print('\n -- 题目+选项搜索结果计数法 -- Question:' + question + '\n')
