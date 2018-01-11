@@ -56,29 +56,32 @@ def output(question, choices, counts, type):
     #print(choices, counts)
     sum_C = sum(data[1])
 
-    for i in [0,1,2]:
-        data[1][i] = (data[1][i] / sum_C) * 100
+    if sum_C == 0:
+        print('{0}方法失效'.format(type))
+    else:
+        for i in [0,1,2]:
+            data[1][i] = (data[1][i] / sum_C) * 100
 
-    # 最可能的答案
-    max_index = data[1].index(max(data[1]))
-    max_pro = data[1][max_index]
+        # 最可能的答案
+        max_index = data[1].index(max(data[1]))
+        max_pro = data[1][max_index]
 
-    # 剩余答案中最可能的答案
-    remain_data = data[1].copy()
-    remain_data.remove(max_pro)
-    mid_pro = max(remain_data)
-    mid_index = data[1].index(mid_pro)
+        # 剩余答案中最可能的答案
+        remain_data = data[1].copy()
+        remain_data.remove(max_pro)
+        mid_pro = max(remain_data)
+        mid_index = data[1].index(mid_pro)
 
-    # 最后剩余的
-    remain_data.remove(mid_pro)
-    min_index = data[1].index(remain_data[0])
+        # 最后剩余的
+        remain_data.remove(mid_pro)
+        min_index = data[1].index(remain_data[0])
 
-    #print('\n 方法:{0} Question:{1} \n'.format(type, question))
-    # 绿色为最可能的答案 红色为最不可能的答案
-    print("\033[1;32m{0} {1:>5.3}%\033[0m {2} {3:>5.3}% \033[0;31m{4} {5:>5.3}% \033[0m {6}" \
-          .format(data[0][max_index], data[1][max_index], \
-                 data[0][mid_index], data[1][mid_index], \
-                 data[0][min_index], data[1][min_index], type))
+        #print('\n 方法:{0} Question:{1} \n'.format(type, question))
+        # 绿色为最可能的答案 红色为最不可能的答案
+        print("\033[1;32m{0} {1:>5.3}%\033[0m   {2} {3:>5.3}%\033[0;31m   {4} {5:>5.3}%\033[0m  {6}" \
+              .format(data[0][max_index], data[1][max_index], \
+                     data[0][mid_index], data[1][mid_index], \
+                     data[0][min_index], data[1][min_index], type))
 
 
 
