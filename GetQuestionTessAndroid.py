@@ -11,6 +11,7 @@ import time
 import threading
 
 if __name__ == '__main__':
+    while True:
         # 计时器
         start = time.clock()
 
@@ -36,4 +37,10 @@ if __name__ == '__main__':
         # 结束
         end = time.clock()
         print("耗时: {0:>5.3}s".format(end - start))
+
+        # 重复运行
+        go = input('输入回车继续运行,输入 n 回车结束运行: ')
+        if go == 'n':
+            break
+
 
