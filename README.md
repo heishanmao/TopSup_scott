@@ -12,6 +12,6 @@
 
 示例：
 
-![image](/TopSup_scott/resources/1.png)
+![image](https://github.com/heishanmao/TopSup_scott/blob/master/resources/1.png)
 
-![image](/TopSup_scott/resources/2.png)
+![image](https://github.com/heishanmao/TopSup_scott/blob/master/resources/2.png)
