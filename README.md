@@ -10,6 +10,8 @@
 
 3、格式化输出
 
+示例：
+
 ![](/resources/1.PNG)
 
 ![](/resources/2.PNG)
