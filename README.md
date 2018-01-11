@@ -12,6 +12,6 @@
 
 示例：
 
-![](/resources/1.PNG)
+![image](/TopSup_scott/resources/1.png)
 
-![](/resources/2.PNG)
+![image](/TopSup_scott/resources/2.png)
